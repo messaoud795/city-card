@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+.app {
+  padding: 10rem 20rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app__cityCard {
+  color: white;
+  width: 30rem;
+  height: 40rem;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app__caption {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 5rem 3rem;
+  background-color: rgba(17, 194, 176, 0.582);
+  font-size: 2.3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+.app__services {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.app__service {
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.5s ease 0s;
+}
+.app__service:hover {
+  transform: translateX(1rem);
+  font-weight: 700;
+}
+.app__service:hover::after {
+  content: " >";
+}
+.app__cityCard:hover .app__caption {
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app__cityCard:hover .app__img {
+  transform: scale(1.15);
 }
